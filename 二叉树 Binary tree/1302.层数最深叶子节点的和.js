@@ -1,4 +1,5 @@
-// 题目描述：给你一棵二叉树的根节点 root ，请你返回 层数最深的叶子节点的和 。
+// 题目描述：
+// 给你一棵二叉树的根节点 root ，请你返回 层数最深的叶子节点的和 。
 // 输入：root = [1,2,3,4,5,null,6,7,null,null,null,null,8]
 // 输出：15
 /**
@@ -14,26 +15,26 @@
  * @return {number}
  */
  // 广度优先搜索思路：对同一层节点优先遍历
-// var BFS  = function(root) {
-//     let sum = 0
-//     const tempQueue=[]
-//     tempQueue.push(root)
-//     while(tempQueue.length){
-//         sum = 0
-//         const size = tempQueue.length 
-//         for(var i=0;i<size;i++){
-//             const node = tempQueue.shift()
-//             sum+=node.val
-//             if(node.left){
-//                 tempQueue.push(node.left)
-//             }
-//             if(node.right){
-//                 tempQueue.push(node.right)
-//             }
-//         }
+var BFS  = function(root) {
+    let sum = 0
+    const tempQueue=[]
+    tempQueue.push(root)
+    while(tempQueue.length){
+        sum = 0
+        const size = tempQueue.length 
+        for(var i=0;i<size;i++){
+            const node = tempQueue.shift()
+            sum+=node.val
+            if(node.left){
+                tempQueue.push(node.left)
+            }
+            if(node.right){
+                tempQueue.push(node.right)
+            }
+        }
         
-//     }
-// };
+    }
+};
 
 // 深度优先搜索：深搜本质上就是暴力搜索，遍历了所有可能的情况，必然能得到解。
 //  var dfs = function(root) {
